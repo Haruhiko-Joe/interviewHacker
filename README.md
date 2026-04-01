@@ -1,6 +1,14 @@
 # interview hacker
 
-基于 Node + Ts + `@openai/codex-sdk` 截图生成答案并自动发送到邮箱的AGENT 使用场景欢迎自行发掘，不可以是INTERVIEW / TEST 哦（意味深）
+基于 Node + Ts + `@openai/codex-sdk` 截图生成答案并自动发送到邮箱的AGENT 
+
+使用场景欢迎自行发掘，不可以是INTERVIEW / TEST 哦（意味深）
+
+## WORKFLOW
+
+1. 摁下快捷键 `ctrl + option + ;` 触发截屏并保存在 `pic` 文件夹下
+2. 立即触发codex解答图片中的问题
+3. codex完成解答后调用gmail mcp将答案发送到自己的邮箱
 
 ## 启动方式
 
@@ -13,9 +21,11 @@ pnpm install
 ```bash
 npm i -g @openai/codex
 ```
-登录自己的codex账号，然后把自己的GMAIL绑定好openai的认证机制
+登录自己的codex账号，然后把自己的GMAIL绑定好openai的认证机制，codex通过OpenAI的网关，所以需要在自己的gpt里配置好gmail的认证并连接，应当如下所示
 
-建议充一个plus会员，这个agent本质上是一个触发器，截图后把图片和预设提示词发给AGENT，AGENT想出答案后用gmail mcp把答案发到指定邮箱
+需要一个plus会员才能有连接gmail的功能，这个agent本质上是一个触发器，截图后把图片和预设提示词发给AGENT，AGENT想出答案后用gmail mcp把答案发到指定邮箱
+
+![gmail](fig/gmail.png)
 
 ### 启动并常驻在后台
 ```bash
@@ -42,8 +52,8 @@ pnpm listen
  /|\     用来写题    用来接收邮件
  / \
 ```
-请务必提前测试，本这个AGENT不会有任何的log
-正式使用前请首先使用leetcode测试，测试的过程会弹出权限提示，需要给vscode 截图等权限
+请务必提前测试，这个AGENT不会有任何的log，确保能成功收到邮件
+正式使用前请首先使用leetcode打开一道题试一下流程能否跑通，测试的过程会弹出权限提示，需要给vscode 截图等权限
 
 正式使用的时候需要在双机位看不到的地方放置一个能登录上自己GMAIL的设备，在自己的设备运行
 
