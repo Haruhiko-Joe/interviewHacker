@@ -13,7 +13,7 @@ pnpm install
 ```bash
 npm i -g @openai/codex
 ```
-登录自己的codex账号
+登录自己的codex账号，然后把自己的GMAIL绑定好openai的认证机制
 
 建议充一个plus会员，这个agent本质上是一个触发器，截图后把图片和预设提示词发给AGENT，AGENT想出答案后用gmail mcp把答案发到指定邮箱
 
